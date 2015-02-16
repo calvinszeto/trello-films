@@ -1,0 +1,15 @@
+<head>
+	<title>Trello Films</title>
+</head>
+<body>
+	{{#if showSearchBox}}
+		<!-- display the search box -->	
+		{{> searchBox }}
+	{{else}} 
+		{{#if showFilmCard}}
+			<!-- display the film card and trello lists -->
+		{{else}}
+			<!-- display the trello content card -->
+		{{/if}}
+	{{/if}}
+</body>

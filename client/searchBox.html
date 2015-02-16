@@ -1,0 +1,8 @@
+<template name="searchBox">
+	<input type="text" 
+				 class="film-name"
+				 placeholder="Search for a film name.">
+	{{#each films}}
+		{{> smallFilmCard }}
+	{{/each}}
+</template>
