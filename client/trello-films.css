@@ -1,1 +1,28 @@
-/* CSS declarations go here */
+body {
+    font-family: 'Futura W01 Medium';
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Didot W02 Roman';
+}
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+input[type=text] {
+    font-size: 2.827em;
+    padding: 0.5em;
+    border: none;
+    border: solid 1px black;
+    border-radius: 0.5em;
+}
+
+input.film-name {
+    display: block;
+    width: 702px;
+    margin-left: 142px;
+    margin-top: 20vh;
+}

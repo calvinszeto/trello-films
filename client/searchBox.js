@@ -1,4 +1,5 @@
-Meteor.subscribe("films");
+var timeout = null;
+Session.set("films", []);
 
 requestFilms = function(query) {
 	var params = {
@@ -13,22 +14,36 @@ requestFilms = function(query) {
 		url: rtBaseUrl + jQuery.param(params),
 		dataType: 'jsonp',
 		success: function(response) {
-			Meteor.call("updateFilms", response.movies);
+			Session.set("films", response.movies);
 		}
 	});
 }
 
 Template.searchBox.events({
-	"change input.film-name": function(event, template) {
-		// TODO: Cancel the timeout on new calls
-		Meteor.setTimeout(function() {
-			requestFilms(event.target.value);
-		}, 1000);
+	"keydown input.film-name": function(event, template) {
+		if (event.target.value.length <2) {
+			timeout = Meteor.setTimeout(function() {
+				Session.set("films", []);
+			});
+		} else if (event.target.value.length >= 2 || event.keyCode === 13) {
+			if (timeout !== null) {
+				Meteor.clearTimeout(timeout);
+			}
+			if (event.keyCode === 13) {
+				timeout = null;
+				requestFilms(event.target.value);
+			} else {
+				timeout = Meteor.setTimeout(function() {
+					timeout = null;
+					requestFilms(event.target.value);
+				}, 1000);
+			}
+		}
 	}
 });
 
 Template.searchBox.helpers({
 	films: function() {
-		return Films.find({});
+		return Session.get("films");
 	}
 })

@@ -1,15 +1,18 @@
 <head>
 	<title>Trello Films</title>
+	<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/c9dce38e-dc66-42f4-aaf2-2cf5036be06c.css"/>
 </head>
 <body>
-	{{#if showSearchBox}}
-		<!-- display the search box -->	
-		{{> searchBox }}
-	{{else}} 
-		{{#if showFilmCard}}
-			<!-- display the film card and trello lists -->
-		{{else}}
-			<!-- display the trello content card -->
+	<div class="container">
+		{{#if showSearchBox}}
+			<!-- display the search box -->	
+			{{> searchBox }}
+		{{else}} 
+			{{#if showFilmCard}}
+				<!-- display the film card and trello lists -->
+			{{else}}
+				<!-- display the trello content card -->
+			{{/if}}
 		{{/if}}
-	{{/if}}
+	</div>
 </body>
