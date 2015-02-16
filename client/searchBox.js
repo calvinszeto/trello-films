@@ -1,5 +1,6 @@
 var timeout = null;
 Session.set("films", []);
+Session.set("loading", false);
 
 requestFilms = function(query) {
 	var params = {
@@ -8,6 +9,7 @@ requestFilms = function(query) {
 		page: 1
 	};
 	var rtBaseUrl = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=htntxm48ts9uh4jk74p34bpp&"
+	Session.set("loading", true);
 	jQuery.ajax({
 		type: "GET",
 		crossDomain: true,
@@ -15,6 +17,7 @@ requestFilms = function(query) {
 		dataType: 'jsonp',
 		success: function(response) {
 			Session.set("films", response.movies);
+			Session.set("loading", false);
 		}
 	});
 }
@@ -45,5 +48,8 @@ Template.searchBox.events({
 Template.searchBox.helpers({
 	films: function() {
 		return Session.get("films");
+	},
+	loading: function() {
+		return Session.get("loading");
 	}
 })

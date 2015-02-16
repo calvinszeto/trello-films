@@ -2,6 +2,9 @@
 	<input type="text" 
 				 class="film-name"
 				 placeholder="What movie are you interested in?">
+  <span class="{{#if loading}}loading{{/if}} tcon-loader--spinner360" aria-label="loading">
+		<span class="tcon-visuallyhidden">loading</span>
+	</span>
 	{{#each films}}
 		{{> smallFilmCard }}
 	{{/each}}
