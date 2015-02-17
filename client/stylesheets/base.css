@@ -1,0 +1,30 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.998em;
+}
+h2 {
+    font-size: 2.827em;
+}
+h3 {
+    font-size: 1.999em;
+}
+h4 {
+    font-size: 1.414em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+    font-size: 0.707em;
+}
+
+input[type=text] {
+    font-size: 2.827em;
+    padding: 0.5em;
+    border: none;
+    border: solid 1px black;
+    border-radius: 0.5em;
+}

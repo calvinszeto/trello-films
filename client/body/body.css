@@ -1,0 +1,9 @@
+body {
+    font-family: 'Futura W01 Medium';
+    font-size: 14px;
+}
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}

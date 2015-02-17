@@ -2,26 +2,6 @@ var timeout = null;
 Session.set("films", []);
 Session.set("loading", false);
 
-requestFilms = function(query) {
-	var params = {
-		q: query,
-		page_limit: 10,
-		page: 1
-	};
-	var rtBaseUrl = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=htntxm48ts9uh4jk74p34bpp&"
-	Session.set("loading", true);
-	jQuery.ajax({
-		type: "GET",
-		crossDomain: true,
-		url: rtBaseUrl + jQuery.param(params),
-		dataType: 'jsonp',
-		success: function(response) {
-			Session.set("films", response.movies);
-			Session.set("loading", false);
-		}
-	});
-}
-
 Template.searchBox.events({
 	"keydown input.film-name": function(event, template) {
 		if (event.target.value.length <2) {
