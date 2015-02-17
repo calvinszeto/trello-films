@@ -3,10 +3,6 @@ body {
     font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Didot W02 Roman';
-}
-
 .container {
     width: 1024px;
     margin: 0 auto;
@@ -28,19 +24,22 @@ input.film-name {
 }
 
 .tcon-loader--spinner360 {
-  border-radius: 80%;
-  display: block;
-  height: 40px;
-  width: 40px;
-  position: relative;
-  -webkit-animation: tcon-spin360 0.675s linear infinite forwards;
-  animation: tcon-spin360 0.675s linear infinite forwards;
-  background: lightgray; }
-  .tcon-loader--spinner360:before, .tcon-loader--spinner360:after {
+    border-radius: 80%;
+    display: block;
+    margin: 1em auto;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    -webkit-animation: tcon-spin360 0.675s linear infinite forwards;
+    animation: tcon-spin360 0.675s linear infinite forwards;
+    background: lightgray;
+}
+.tcon-loader--spinner360:before, .tcon-loader--spinner360:after {
     content: "";
     display: block;
-    position: absolute; }
-  .tcon-loader--spinner360:before {
+    position: absolute;
+}
+.tcon-loader--spinner360:before {
     border-radius: 0 90px 90px 0;
     height: 40px;
     width: 50%;
@@ -48,8 +47,9 @@ input.film-name {
     right: 0;
     z-index: 1;
     background: black;
-    background-image: linear-gradient(lightgray, black); }
-  .tcon-loader--spinner360:after {
+    background-image: linear-gradient(lightgray, black);
+}
+.tcon-loader--spinner360:after {
     border-radius: 80%;
     height: 30px;
     width: 30px;
@@ -58,22 +58,20 @@ input.film-name {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 1;
-    background: white; }
-
-@-webkit-keyframes tcon-spin360 {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@keyframes tcon-spin360 {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-.tcon-loader--spinner360:not(.loading) {
-    display: none;
+    background: white;
 }
-
+@-webkit-keyframes tcon-spin360 {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes tcon-spin360 {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 .tcon-visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -82,14 +80,58 @@ input.film-name {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px; 
+  width: 1px;
+}
+.tcon-visuallyhidden:active, .tcon-visuallyhidden:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
 }
 
-.tcon-visuallyhidden:active, .tcon-visuallyhidden:focus {
-clip: auto;
-height: auto;
-margin: 0;
-overflow: visible;
-position: static;
-width: auto;
+.tcon-loader--spinner360:not(.loading) {
+    display: none;
+}
+
+.small-film-card {
+    padding: 1em;
+    border: solid 1px black;
+    border-radius: 1em;
+    width: 670px;
+    margin-top: 1em;
+    margin-left: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.small-film-card:hover {
+    background-color: #00edff;  
+}
+.small-film-card:active {
+    background-color: #00bdcc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.998em;
+}
+h2 {
+    font-size: 2.827em;
+}
+h3 {
+    font-size: 1.999em;
+}
+h4 {
+    font-size: 1.414em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+    font-size: 0.707em;
 }
