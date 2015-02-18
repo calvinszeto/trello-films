@@ -6,5 +6,8 @@ Template.body.helpers({
 	},
 	showFilmCard: function() {
 		return Session.get("selectedFilm") !== null;
+	},
+	verified: function() {
+		return Meteor.user().emails[0].verified;
 	}
 });

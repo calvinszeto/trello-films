@@ -1,14 +1,23 @@
 <body>
 	<div class="container">
-		{{#if showSearchBox}}
-			{{> searchBox }}
-		{{else}} 
-			{{#if showFilmCard}}
-				<!-- display the film card and trello lists -->
-				{{> trelloSelection }}
+		{{> loginButtons }}
+		{{#if currentUser }}
+			{{#if verified }}
+				{{#if showSearchBox}}
+					{{> searchBox }}
+				{{else}} 
+					{{#if showFilmCard}}
+						<!-- display the film card and trello lists -->
+						{{> trelloSelection }}
+					{{else}}
+						<!-- display the trello content card -->
+					{{/if}}
+				{{/if}}
 			{{else}}
-				<!-- display the trello content card -->
+				Please verify your account.
 			{{/if}}
+		{{else}}
+			Please sign in.
 		{{/if}}
 	</div>
 </body>
