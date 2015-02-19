@@ -1,3 +1,4 @@
+Meteor.subscribe("userData");
 Session.set("selectedFilm", null);
 
 Template.body.helpers({

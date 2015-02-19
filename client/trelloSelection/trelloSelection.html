@@ -1,2 +1,6 @@
 <template name="trelloSelection">
+	{{#if signedToTrello}}
+	{{else}}
+		Please <a id="signToTrello">sign into Trello</a>.
+	{{/if}}
 </template>
