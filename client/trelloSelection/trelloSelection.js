@@ -8,7 +8,9 @@ Template.trelloSelection.helpers = {
 };
 
 Template.trelloSelection.events = {
-    "click #signToTrello": function() {
-        Meteor.call("signToTrello");
-    }
+	"click #signToTrello": function() {
+		Meteor.loginWithTrello(function() {
+			console.log("it worked?")
+		});
+	}
 }
